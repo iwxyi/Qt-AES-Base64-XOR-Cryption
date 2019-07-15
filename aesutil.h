@@ -29,7 +29,7 @@ public:
     {
         int len = strlen((char*)(text.toLatin1().data()));
         int malloc_len = len * sizeof(char) + 1;
-qDebug() << "开始加密 len=" << len;
+//qDebug() << "开始加密 len=" << len;
         // 转换成 char* 类型
         char* string = (char*)malloc(malloc_len);
         memset((char*)string, 0, malloc_len);
@@ -49,11 +49,11 @@ qDebug() << "开始加密 len=" << len;
             aes.Cipher(input, output);
             strncpy(out_string+i, (char*)output, 16);
 
-            printf(" >> %d:%s\n", i, input);
-            print_uchar(input, 16);
-            print_uchar(output, 16);
+//            printf(" >> %d:%s\n", i, input);
+//            print_uchar(input, 16);
+//            print_uchar(output, 16);
         }
-        printf("out_string:%s\n", out_string);
+//        printf("out_string:%s\n", out_string);
         QString res(QLatin1String((char*)out_string));
 
         free(string);
@@ -66,7 +66,6 @@ qDebug() << "开始加密 len=" << len;
     {
         int len = strlen((char*)(text.toLatin1().data()));
         int malloc_len = len * sizeof(char) + 1;
-        printf("char:%s\n", (char*)(text.toLatin1().data()));
 //        qDebug() << "开始解密 len=" << len;
 
         // 转换成 char* 类型
@@ -92,7 +91,7 @@ qDebug() << "开始加密 len=" << len;
 //            print_uchar(input, 16);
 //            print_uchar(output, 16);
         }
-        printf("out_string2:%s\n", out_string);
+//        printf("out_string2:%s\n", out_string);
         QString res(out_string);
 
         free(string);

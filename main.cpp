@@ -224,9 +224,9 @@ int main(int argc, char **argv)
     QCoreApplication app(argc, argv);
 
 //    test1();
-//    test2();
+    test2();
 
-    test3();
+//    test3();
 //    test4();
 
 
